@@ -1,4 +1,5 @@
 # Sistema de Recomendación Turística para Colombia
+Este README también está disponible en Inglés más abajo. / This README is also available in English below.
 
 Este proyecto es un sistema de recomendación de destinos turísticos y hoteles en Colombia, desarrollado en Python. El sistema interactúa con el usuario para entender sus preferencias de viaje y, basándose en ellas, sugiere los destinos más adecuados junto con opciones de alojamiento relevantes.
 
@@ -103,3 +104,114 @@ El sistema sigue estos pasos para generar recomendaciones:
 ## 🙏 Agradecimientos
 
 Este proyecto es el resultado del aprendizaje y la aplicación de los conocimientos adquiridos durante el bootcamp de **Talento Tech**. Agradezco a los instructores y al programa por la valiosa formación.
+
+---
+
+---
+
+## English Version
+
+# Colombia Tourism Recommendation System
+
+This project is a recommendation system for tourist destinations and hotels in Colombia, developed in Python. The system interacts with the user to understand their travel preferences and, based on these, suggests the most suitable destinations along with relevant accommodation options.
+
+This project was developed as a fundamental part of my learning and practical application of knowledge during the **Talento Tech** bootcamp.
+
+## 📜 Overview
+
+The main objective is to offer an interactive tool that, based on user preferences (such as type of activities, ambiance, etc.), can filter and present Colombian destinations that best suit their desires. Additionally, for the suggested destinations, examples of hotels are provided.
+
+## ✨ Key Features
+
+- Personalized recommendations for over 20 tourist destinations in Colombia.
+- Hotel suggestions for each recommended destination, including type, estimated price range, and key features.
+- Interactive console-based input for user preferences (beach, culture, nature, nightlife, gastronomy).
+- Option for the user to end the preference input process prematurely.
+- Use of Pandas DataFrames to manage destination information (including climate details) and hotel data.
+
+## 🛠️ Technologies Used
+
+- **Language:** Python 3.x
+- **Main Libraries:**
+    - **Pandas:** For data structuring and manipulation.
+    - **NumPy:** For numerical operations and array manipulation.
+    - **Scikit-learn:** For data preprocessing (`StandardScaler`) and similarity calculation (`cosine_similarity`).
+    - **IPython:** For enhanced display of DataFrames in development environments (`display`).
+
+## ⚙️ Setup and Usage
+
+Follow these steps to set up and run the project in your local environment:
+
+### Prerequisites
+
+- Python 3.7 or higher.
+- pip (Python package manager).
+- Git (to clone the repository).
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/crerius/Recomendador-Turistico-ML.git](https://github.com/crerius/Recomendador-Turistico-ML.git)
+    cd Recomendador-Turistico-ML
+    ```
+
+2.  **(Recommended) Create and activate a virtual environment:**
+    ```bash
+    python -m venv venv
+    ```
+    * On Windows:
+        ```bash
+        venv\Scripts\activate
+        ```
+    * On macOS/Linux:
+        ```bash
+        source venv/bin/activate
+        ```
+
+3.  **Install dependencies:**
+    Create a file named `requirements.txt` in the root of your project with the following content:
+    ```txt
+    pandas
+    numpy
+    scikit-learn
+    ipython
+    ```
+    Then, run in your terminal:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Running the Project
+
+1.  Ensure you are in the root directory of the project where your main script is located.
+2.  Run the script from your terminal:
+    ```bash
+    python Hoteles_modelo_ML.py
+    ```
+3.  Follow the on-screen prompts to enter your travel preferences.
+
+## 🧠 How it Works
+
+The system follows these steps to generate recommendations:
+
+1.  **Preference Input:** The user specifies what features they are looking for in a destination (beach, culture, etc.) using binary inputs (1 for Yes, 0 for No).
+2.  **Preprocessing:** User preferences and destination features are scaled using Scikit-learn's `StandardScaler`. This normalizes the data and ensures all features contribute પાણીquitably to the similarity calculation.
+3.  **Destination Similarity:** Cosine similarity is calculated between the user's scaled preference vector and the scaled feature vectors of each destination. Destinations are ranked according to this similarity score to identify the best matches.
+4.  **Hotel Suggestions:**
+    * An "artificial similarity" score is calculated for all hotels (by adapting their scores to have a dimensionality compatible with user preferences, as requested to maintain the calculation structure).
+    * Finally, and most importantly, **hotels belonging to the destinations recommended to the user are displayed**, ordered within each city.
+5.  **Data:** Information is managed through two Pandas DataFrames: one for destinations and another for hotels.
+
+## 🚀 Potential Future Enhancements
+
+- Integrate a weighting system for user preferences (e.g., culture being more important than beach).
+- Expand the database of destinations and hotels, or connect it to external APIs for updated data.
+- Develop a graphical user interface (GUI) or a web application for a better user experience.
+- Implement more sophisticated recommendation algorithms (e.g., collaborative filtering if multi-user data were available).
+- Add more filters for hotels (e.g., exact price range, specific amenities, accessibility).
+- Improve the hotel similarity logic to be based on more direct hotel features in relation to user preferences.
+
+## 🙏 Acknowledgements
+
+This project is the result of learning and applying knowledge acquired during the **Talento Tech** bootcamp. I am grateful to the instructors and the program for the valuable training.
